@@ -1,0 +1,84 @@
+{
+  "expectedArtifacts": [
+    {
+      "defaultArtifact": {
+        "customKind": true,
+        "id": "b8962a8e-5310-443f-a0be-77ba6abdb613"
+      },
+      "displayName": "heavy-ape-62",
+      "id": "12b00d5d-7ebe-4d66-a07c-1adff8e9e289",
+      "matchArtifact": {
+        "artifactAccount": "docker-registry",
+        "id": "a01a0495-9588-4b0e-94ed-a6128fe62310",
+        "name": "index.docker.io/kirankumar77/webapp",
+        "type": "docker/image"
+      },
+      "useDefaultArtifact": false,
+      "usePriorArtifact": false
+    }
+  ],
+  "keepWaitingPipelines": false,
+  "lastModifiedBy": "anonymous",
+  "limitConcurrent": true,
+  "spelEvaluator": "v4",
+  "stages": [
+    {
+      "account": "kubernetes-admin",
+      "cloudProvider": "kubernetes",
+      "manifestArtifact": {
+        "artifactAccount": "my-github-artifact-account",
+        "id": "9b2e0aa0-0fdd-4c5c-8176-a0c653a7718f",
+        "name": "manifests/uat.yml",
+        "reference": "https://api.github.com/repos/kirankumar77/spin-webapp/contents/manifests/uat.yml",
+        "type": "github/file"
+      },
+      "moniker": {
+        "app": "cicd"
+      },
+      "name": "Deploy (Manifest)",
+      "refId": "1",
+      "requiredArtifactIds": [],
+      "requiredArtifacts": [
+        {
+          "artifact": {
+            "artifactAccount": "my-github-artifact-account",
+            "id": "d8bb72cb-c681-46cc-ae7e-5f6ca4ed93c5",
+            "name": "manifests/dev.yml",
+            "reference": "https://api.github.com/repos/kirankumar77/spin-webapp/contents/manifests/dev.yml",
+            "type": "github/file"
+          }
+        }
+      ],
+      "requisiteStageRefIds": [],
+      "skipExpressionEvaluation": false,
+      "source": "artifact",
+      "trafficManagement": {
+        "enabled": true,
+        "options": {
+          "enableTraffic": true,
+          "namespace": "uat",
+          "services": [
+            "service maven-demo"
+          ],
+          "strategy": "highlander"
+        }
+      },
+      "type": "deployManifest"
+    }
+  ],
+  "triggers": [
+    {
+      "application": "cicd",
+      "enabled": true,
+      "expectedArtifactIds": [
+        "12b00d5d-7ebe-4d66-a07c-1adff8e9e289"
+      ],
+      "pipeline": "2813215d-93b1-4a08-8b66-49700778ab52",
+      "status": [
+        "successful"
+      ],
+      "type": "pipeline"
+    }
+  ],
+  "updateTs": "1588244340000"
+}
