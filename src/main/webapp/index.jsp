@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="jumbotron" style="background-color:white">
-     <h1 class="text-center">Today is 30042020</h1>
+     <h1 class="text-center">this is V9 Image</h1>
       <img src="https://miro.medium.com/max/400/1*xyKBvrsqwIdINAmXIw3KgA.png" alt="Spidertocat"
            class="img-responsive center-block" style="width:250px"/>
       <h1 class="text-center">Maven based Projects</h1>
