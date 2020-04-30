@@ -3,18 +3,18 @@
     {
       "defaultArtifact": {
         "customKind": true,
-        "id": "b8962a8e-5310-443f-a0be-77ba6abdb613"
+        "id": "66b974e8-c54c-41c2-b36e-6b68df755969"
       },
-      "displayName": "heavy-ape-62",
-      "id": "12b00d5d-7ebe-4d66-a07c-1adff8e9e289",
+      "displayName": "witty-mayfly-58",
+      "id": "895b664a-5006-4a71-a428-fb6e5eaf1473",
       "matchArtifact": {
         "artifactAccount": "docker-registry",
-        "id": "a01a0495-9588-4b0e-94ed-a6128fe62310",
+        "id": "23cf42bc-c8fb-49d8-b917-33523290088b",
         "name": "index.docker.io/kirankumar77/webapp",
         "type": "docker/image"
       },
       "useDefaultArtifact": false,
-      "usePriorArtifact": false
+      "usePriorArtifact": true
     }
   ],
   "keepWaitingPipelines": false,
@@ -25,23 +25,18 @@
     {
       "account": "kubernetes-admin",
       "cloudProvider": "kubernetes",
+      "manifestArtifact": {
+        "artifactAccount": "my-github-artifact-account",
+        "id": "09b16146-eb7b-4c34-a320-3f4acabfa23b",
+        "name": "manifests/dev.yml",
+        "reference": "https://api.github.com/repos/kirankumar77/spin-webapp/contents/manifests/dev.yml",
+        "type": "github/file"
+      },
       "moniker": {
-        "app": "cicd"
+        "app": "mavenapplication"
       },
       "name": "Deploy (Manifest)",
       "refId": "1",
-      "requiredArtifactIds": [],
-      "requiredArtifacts": [
-        {
-          "artifact": {
-            "artifactAccount": "my-github-artifact-account",
-            "id": "d8bb72cb-c681-46cc-ae7e-5f6ca4ed93c5",
-            "name": "manifests/dev.yml",
-            "reference": "https://api.github.com/repos/kirankumar77/spin-webapp/contents/manifests/dev.yml",
-            "type": "github/file"
-          }
-        }
-      ],
       "requisiteStageRefIds": [],
       "skipExpressionEvaluation": false,
       "source": "artifact",
@@ -64,13 +59,13 @@
       "account": "my-docker-registry",
       "enabled": true,
       "expectedArtifactIds": [
-        "12b00d5d-7ebe-4d66-a07c-1adff8e9e289"
+        "895b664a-5006-4a71-a428-fb6e5eaf1473"
       ],
-      "organization": "kirankumar77",
+      "organization": "ramagcpgrafana",
       "registry": "index.docker.io",
       "repository": "kirankumar77/webapp",
       "type": "docker"
     }
   ],
-  "updateTs": "1588243706000"
+  "updateTs": "1588242394000"
 }
