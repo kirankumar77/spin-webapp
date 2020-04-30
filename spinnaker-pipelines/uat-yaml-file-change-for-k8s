@@ -1,0 +1,66 @@
+{
+  "expectedArtifacts": [
+    {
+      "defaultArtifact": {
+        "customKind": true,
+        "id": "570a7344-73b7-4750-9f36-9133caf97630"
+      },
+      "displayName": "tame-quail-99",
+      "id": "01536465-ec7a-43f9-93fc-aeac7baef20b",
+      "matchArtifact": {
+        "artifactAccount": "my-github-artifact-account",
+        "customKind": true,
+        "id": "91ce1bc5-617a-4bec-a99b-ab82c1d95917",
+        "name": "manifests/uat.yml",
+        "type": "github/file"
+      },
+      "useDefaultArtifact": false,
+      "usePriorArtifact": false
+    }
+  ],
+  "keepWaitingPipelines": false,
+  "lastModifiedBy": "anonymous",
+  "limitConcurrent": true,
+  "spelEvaluator": "v4",
+  "stages": [
+    {
+      "account": "kubernetes-admin",
+      "cloudProvider": "kubernetes",
+      "manifestArtifactId": "01536465-ec7a-43f9-93fc-aeac7baef20b",
+      "moniker": {
+        "app": "cicd"
+      },
+      "name": "Deploy (Manifest)",
+      "refId": "1",
+      "requisiteStageRefIds": [],
+      "skipExpressionEvaluation": false,
+      "source": "artifact",
+      "trafficManagement": {
+        "enabled": true,
+        "options": {
+          "enableTraffic": true,
+          "namespace": "uat",
+          "services": [
+            "service maven-demo"
+          ],
+          "strategy": "highlander"
+        }
+      },
+      "type": "deployManifest"
+    }
+  ],
+  "triggers": [
+    {
+      "enabled": true,
+      "expectedArtifactIds": [
+        "01536465-ec7a-43f9-93fc-aeac7baef20b"
+      ],
+      "project": "kirankumar77",
+      "secret": "test",
+      "slug": "spin-webapp",
+      "source": "github",
+      "type": "git"
+    }
+  ],
+  "updateTs": "1588243799000"
+}
