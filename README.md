@@ -1,1 +1,2 @@
 # spin-webapp
+Spinnaker is an open source, multi-cloud continuous delivery tool created by Netflix. It allows us to configure multiple deployment strategies such as Highlander, Red/Black. It not only allows us to rollback in case of failures but also trigger promoted pipelines. Meaning we can configure complex pipelines by allowing us to define testing pipelines and promote to next stage or rollback easily and safely in controlled Kubernetes cluster(s).
